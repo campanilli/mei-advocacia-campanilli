@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://campanilliadvocacia.vercel.app/sitemap.xml
