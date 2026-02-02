@@ -408,35 +408,26 @@
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 1px solid #D1D5DB;
             border-radius: 5px;
             font-family: 'Roboto', sans-serif;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
+            font-size: 1rem;
         }
 
         .form-group textarea {
-            min-height: 120px;
             resize: vertical;
+            min-height: 120px;
         }
 
         .checkbox-group {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.5rem;
         }
 
         .checkbox-group input {
             width: auto;
-        }
-
-        .checkbox-group label {
-            margin-bottom: 0;
+            margin-top: 0.3rem;
         }
 
         .btn-submit {
@@ -657,10 +648,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h2 class="fade-in">Defenda seus Direitos com Experiência e Agilidade</h2>
-        <p class="fade-in">Advocacia acessível e eficiente. Consulta inicial gratuita.</p>
+        <p class="fade-in">Especialistas em pequenas causas em Vila Constança e região. Atendimento rápido e acessível.</p>
         <div class="hero-buttons fade-in">
-            <a href="#contato" class="btn btn-primary">Fale Conosco</a>
-            <a href="#servicos" class="btn btn-secondary">Nossos Serviços</a>
+            <a href="#sobre" class="btn btn-primary">Saiba Mais</a>
+            <a href="#contato" class="btn btn-secondary">Fale Conosco</a>
         </div>
     </section>
 
@@ -669,29 +660,14 @@
         <h2 class="section-title">Sobre Nós</h2>
         <div class="about-content">
             <div class="about-text">
-                <p><strong>Bem-vindo à Campanilli Advocacia!</strong></p>
-                <p>Somos especializados em pequenas causas, oferecendo atendimento humanizado e soluções jurídicas eficazes para pessoas físicas e pequenos empresários.</p>
-                <p>Nosso compromisso é oferecer <strong>justiça acessível</strong>, com transparência, agilidade e dedicação. Cada cliente é único e merece atenção personalizada.</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <i class="fas fa-users"></i>
-                        <h3>500+</h3>
-                        <p>Clientes Atendidos</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-trophy"></i>
-                        <h3>85%</h3>
-                        <p>Taxa de Sucesso</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>30 dias</h3>
-                        <p>Tempo Médio de Resolução</p>
-                    </div>
-                </div>
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Dr. João Carlos Campanilli</h3>
+                <p>Campanilli Advocacia é referência em pequenas causas há mais de 10 anos. Localizado estrategicamente em Vila Constança, Rua São Geraldino, 333, atendemos com ética, dedicação e transparência.</p>
+                <p>Com experiência comprovada em Juizados Especiais Cíveis (JEC) e varas cíveis, garantimos que seus direitos sejam defendidos com agilidade e profissionalismo.</p>
+                <p>Acreditamos que acesso à justiça deve ser para todos. Por isso, oferecemos consultoria inicial gratuita e valores acessíveis, sempre respeitando as normas da OAB/SP.</p>
+                <p><strong>Especialidades:</strong> Direito Trabalhista, Consumidor, Família e Cível</p>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500&h=600&fit=crop" alt="Advogado atendendo cliente" class="lawyer-photo">
+                <img src="img/joaocarloscampanilli.jpg" alt="Dr. João Carlos Campanilli - Advogado" class="lawyer-photo" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
@@ -835,7 +811,7 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>E-mail</h4>
-                        <p>contato@campanilli.adv.br</p>
+                        <p>jc.campanilli@outlook.com</p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -855,7 +831,7 @@
             </div>
         </div>
         
-        <!-- Mapa -->
+        <!-- Mapa movido para cá -->
         <div class="map-section">
             <h3>Nossa Localização</h3>
             <div class="map-container">
@@ -875,6 +851,11 @@
             <div class="footer-section">
                 <h3>Campanilli Advocacia</h3>
                 <p>Defendendo seus direitos com ética e dedicação.</p>
+                <!--<div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>-->
             </div>
             <div class="footer-section">
                 <h3>Links Rápidos</h3>
@@ -886,7 +867,7 @@
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Rua São Geraldino, 333<br>Vila Constança, São Paulo - SP</p>
-                <p><i class="fas fa-envelope"></i> contato@campanilli.adv.br</p>
+                <p><i class="fas fa-envelope"></i> jc.campanilli@outlook.com</p>
                 <p><i class="fas fa-phone"></i> (11) 94515-2608</p>
             </div>
         </div>
@@ -904,7 +885,7 @@
             navLinks.classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link
+        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -912,36 +893,4 @@
         });
 
         // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Aqui você pode adicionar integração com backend ou serviço de email
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            this.reset();
-        });
-
-        // Animação ao scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .area-item, .testimonial').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+        
