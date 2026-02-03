@@ -858,7 +858,7 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>E-mail</h4>
-                        <p>jc.campanilli@outlook.com</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ee4eda0edefe3feefe0e7e2e2e7cee1fbfae2e1e1e5a0ede1e3">[email&#160;protected]</a></p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -914,7 +914,7 @@
             <div class="footer-section">
                 <h3>Contato</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Rua São Geraldino, 333<br>Vila Constança, São Paulo - SP</p>
-                <p><i class="fas fa-envelope"></i> jc.campanilli@outlook.com</p>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28424b064b49455849464144444168475d5c44474743064b4745">[email&#160;protected]</a></p>
                 <p><i class="fas fa-phone"></i> (11) 94515-2608</p>
             </div>
         </div>
@@ -923,7 +923,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -940,17 +940,31 @@
         });
 
         // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form Submission - Redirecionar para WhatsApp
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+            const formData = new FormData(contactForm);
+            const nome = formData.get('name');
+            const email = formData.get('email');
+            const telefone = formData.get('phone');
+            const mensagem = formData.get('message');
             
-            // Aqui você pode adicionar integração com backend ou serviço de email
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            this.reset();
+            // WhatsApp integration
+            const whatsappMessage = `Olá! Meu nome é ${nome}.%0A%0A` +
+                `📧 Email: ${email}%0A` +
+                `📱 Telefone: ${telefone}%0A%0A` +
+                `Mensagem: ${mensagem || 'Gostaria de agendar uma consulta!'}`;
+            
+            window.open(`https://wa.me/5511945152608?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Show success message
+            alert('Mensagem enviada! Você será redirecionado para o WhatsApp.');
         });
 
         // Animação ao scroll
@@ -960,16 +974,4 @@
         };
 
         const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .area-item, .testimonial').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+           
